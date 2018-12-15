@@ -4,14 +4,6 @@ import com.mongodb.MongoClient
 import com.mongodb.MongoClientURI
 import java.util.*
 
-
-
-
-
-
-
-
-
 fun main(args: Array<String>) {
     val mongoClient = MongoClient(MongoClientURI("mongodb://localhost:27017"))
     val database = mongoClient.getDB("kotlinmongodb")
@@ -44,4 +36,6 @@ fun main(args: Array<String>) {
     collection.update(query, updateObject)
 
     println(collection.find(query).one())
+
+    collection.remove(query)
 }
